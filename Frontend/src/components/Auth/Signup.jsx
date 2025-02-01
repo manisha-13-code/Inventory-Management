@@ -2,14 +2,14 @@ import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import 'remixicon/fonts/remixicon.css';
-import signupImage from "../../assets/image.png";
+import signupImage from "../../assets/RegisterImg.jpg";
 import axios from "axios";
 import { AuthDataContext } from "../../context/AuthContext";
 const Signup = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [fullname, setFullname] = useState("");
-  const [companyName, setCompanyName] = useState("");
+  const [companyname, setCompanyName] = useState("");
   const [error, setError] = useState(null);
   const navigate = useNavigate();
 
@@ -20,7 +20,7 @@ const Signup = () => {
     setError(null)
     const newUser = {
       fullname,
-      companyName,
+      companyname,
       email,
       password,
     };
@@ -53,10 +53,10 @@ const Signup = () => {
         <h2 className="text-2xl font-bold text-center mb-6">Signup</h2>
         <form onSubmit={handleSubmit}>
           <input type="text" placeholder="Full Name" value={fullname} onChange={(e) => setFullname(e.target.value)} className="w-full p-2 mb-4 border rounded-md" required />
-          <input type="text" placeholder="Company Name" value={companyName} onChange={(e) => setCompanyName(e.target.value)} className="w-full p-2 mb-4 border rounded-md" required />
+          <input type="text" placeholder="Company Name" value={companyname} onChange={(e) => setCompanyName(e.target.value)} className="w-full p-2 mb-4 border rounded-md" required />
           <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} className="w-full p-2 mb-4 border rounded-md" required />
           <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} className="w-full p-2 mb-4 border rounded-md" required />
-          <button type="submit" className="w-full bg-green-500 text-white p-2 rounded-lg">Signup</button>
+          <button type="submit" className="w-full bg-blue-500 text-white p-2 rounded-lg">Signup</button>
         </form>
         <p className="text-center mt-5">
           Already have an account?{' '}

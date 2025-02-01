@@ -4,6 +4,7 @@ import Login from "./components/Auth/Login";
 import Signup from "./components/Auth/Signup";
 import Dashboard from "./pages/Dashboard";
 import Home from "./pages/Home";
+import UserProtectWrapper from "./pages/UserProtectWrapper";
 
 const App = () => {
 
@@ -12,7 +13,12 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
-            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/dashboard" element={
+              <UserProtectWrapper>
+                <Dashboard />
+              </UserProtectWrapper>
+              
+            }/>
         </Routes>
   );
 };

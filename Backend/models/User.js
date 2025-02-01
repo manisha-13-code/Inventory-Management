@@ -6,12 +6,12 @@ const userSchema = new mongoose.Schema({
     fullname: {
         type: String,
         required: true,
-        minLength: [6, 'First name must be at least 6 characters long']
+        minLength: [3, 'First name must be at least 3 characters long']
     },
     companyname: {
         type: String,
         required: true,
-        minLength: [6, 'Company name must be at least 3 characters long']
+        minLength: [3, 'Company name must be at least 3 characters long']
     },
     email: {
         type: String,
